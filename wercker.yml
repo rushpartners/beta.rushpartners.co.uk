@@ -1,11 +1,13 @@
 box: kingsquare/wercker-php-node
 build:
   steps:
+    - install-packages:
+        packages: libpng-dev
     - script:
-      name: set composer environment variables for using wercker cache
-      code: export COMPOSER_CACHE_DIR=$WERCKER_CACHE_DIR/composer
+        name: set composer environment variables for using wercker cache
+        code: export COMPOSER_CACHE_DIR=$WERCKER_CACHE_DIR/composer
     - mbrevda/composer-install:
-      opts: --no-interaction --optimize-autoloader
+        opts: --no-interaction --optimize-autoloader
     - npm-install
     - script:
         name: Build
