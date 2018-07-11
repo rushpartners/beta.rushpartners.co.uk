@@ -1,0 +1,25 @@
+/**
+ * Import any google/fontstack/adobe fonts here
+ *
+ * @import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+ */
+
+@tailwind preflight;
+
+@tailwind components;
+
+/**
+ * Import your own components here
+ *
+ * @import "components/buttons";
+ * @import "components/forms";
+ */
+
+ @tailwind utilities;
+
+/**
+ * Import any utility files here.
+ *
+ * @import "utilities/background-patterns";
+ * @import "utilities/skew-transforms";
+ */
