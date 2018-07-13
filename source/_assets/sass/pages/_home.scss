@@ -1,0 +1,116 @@
+.home {
+  &__brandslist {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 52px;
+    text-align: center;
+    clear: both;
+    width: 100%;
+
+    > * {
+      padding: 20px 0;
+      flex: 1 0 calc(#{percentage(1/3)} - 10px);
+
+      &:nth-child(3n+1) {
+        text-align: left;
+      }
+      &:nth-child(3n+3) {
+        text-align: right;
+      }
+    }
+  }
+
+  &__innovative {
+    background: linear-gradient(174.94deg, #F4835E 0%, #D93F3A 59.73%, #D53535 74.7%, #CE242C 100%);
+    margin-top: -250px;
+    height: 451px;
+    padding: 290px 96px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  &-header {
+    background: url(/images/intro-background.jpg) no-repeat center top / cover;
+
+    &__title {
+      margin-top: 227px;
+    }
+
+    // "Sports Technology"
+    &__subtitle {
+      font: 800 24px $font;
+      text-transform: uppercase;
+
+      // Leading/trailing lines
+      > * {
+        &:first-child, &:last-child {
+          position: absolute;
+          letter-spacing: 10px;
+        }
+        &:first-child:before, &:last-child:after {
+          content: '';
+          display: inline-block;
+          border-top: 2px solid $col-white;
+          opacity: .5;
+          width: 140px;
+          vertical-align: middle;
+          height: 2px;
+          position: relative;
+          top: -2px;
+        }
+        &:first-child {
+          left: 0;
+          top: 280px;
+
+          &:before {
+            margin-right: 20px;
+          }
+        }
+        &:last-child {
+          right: 0;
+          top: 500px;
+
+          &:after {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+
+    &__intro-text {
+      width: 591px;
+      text-align: left;
+      margin: 55px 0 0 15%;
+
+      @media (max-width: 1200px) {
+        width: 50%;
+        margin-left: 70px;
+      }
+    }
+
+    // Call to action
+    &__cta {
+      $title-width: 859px;
+      width: $title-width;
+      padding: 57px 0 170px;
+      text-align: right;
+
+      .btn {
+        &:after {
+          content: '\2E3B';
+          margin-left: 30px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 991px) {
+    &__cta {
+      width: auto;
+      text-align: center;
+    }
+  }
+}

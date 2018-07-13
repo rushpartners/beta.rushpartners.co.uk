@@ -1,5 +1,8 @@
 @extends('_layouts.master')
 
 @section('body')
-    <h1>RushPartners.co.uk</h1>
+<div class="container mx-auto">
+  @include('_partials/home-header')
+  @include('_partials/our-brands')
+</div>
 @endsection

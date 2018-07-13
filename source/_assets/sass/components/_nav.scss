@@ -1,0 +1,65 @@
+.nav {
+  padding: 30px 30px 0;
+  display: flex;
+
+  &__logo {
+    flex: 0 0 131px;
+  }
+
+  &__menu {
+    font: italic 800 14px $font;
+    text-transform: uppercase;
+    flex: 3 1 auto;
+
+    li {
+      flex: 1 1 auto;
+      a {
+        display: inline-block;
+        padding: 25px;
+      }
+    }
+  }
+
+  &__social {
+    flex: 1 1 auto;
+
+    a {
+      display: block;
+      padding: 20px 0;
+      position: relative;
+
+      img {
+        transition: $trans;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.4);
+        }
+      }
+      &:before {
+        @extend %pseudo;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(#fff, .08);
+        border-radius: 999px;
+        transition: all .1s ease-out;
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      &:hover:focus {
+        &:before {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    }
+
+    img {
+      vertical-align: middle;
+    }
+  }
+}
