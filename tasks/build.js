@@ -1,46 +1,46 @@
-let argv = require('yargs').argv;
-let bin = require('./bin');
-let command = require('node-cmd');
+const argv = require('yargs').argv;
+const bin = require('./bin');
+const command = require('node-cmd');
 
-let AfterWebpack = require('on-build-webpack');
-let BrowserSync = require('browser-sync');
-let BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-let Watch = require('webpack-watch');
+const AfterWebpack = require('on-build-webpack');
+const BrowserSync = require('browser-sync');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const Watch = require('webpack-watch');
 
 let browserSyncInstance;
-let env = argv.e || argv.env || 'local';
-let port = argv.p || argv.port || 3000;
+const env = argv.e || argv.env || 'local';
+const port = argv.p || argv.port || 3000;
 
 module.exports = {
-    jigsaw: new AfterWebpack(() => {
-        command.get(bin.path() + ' build ' + env, (error, stdout, stderr) => {
-            console.log(error ? stderr : stdout);
+  jigsaw: new AfterWebpack(() => {
+    command.get(bin.path() + ' build ' + env, (error, stdout, stderr) => {
+      console.log(error ? stderr : stdout);
 
-            if (browserSyncInstance) {
-                browserSyncInstance.reload();
-            }
-        });
-    }),
+      if (browserSyncInstance) {
+        browserSyncInstance.reload();
+      }
+    });
+  }),
 
-    watch: function(paths) {
-        return new Watch({
-            options: { ignoreInitial: true },
-            paths: paths,
-        })
-    },
+  watch: function(paths) {
+    return new Watch({
+      options: { ignoreInitial: true },
+      paths: paths,
+    })
+  },
 
-    browserSync: function(proxy) {
-        return new BrowserSyncPlugin({
-            notify: false,
-            port: port,
-            proxy: proxy,
-            server: proxy ? null : { baseDir: 'build_' + env + '/' },
+  browserSync: function(proxy) {
+    return new BrowserSyncPlugin({
+        notify: false,
+        port,
+        proxy,
+        server: proxy ? null : { baseDir: 'build_' + env + '/' },
+      },
+      {
+        reload: false,
+        callback: function() {
+          browserSyncInstance = BrowserSync.get('bs-webpack-plugin');
         },
-        {
-            reload: false,
-            callback: function() {
-                browserSyncInstance = BrowserSync.get('bs-webpack-plugin');
-            },
-        })
-    },
+      })
+  },
 };
