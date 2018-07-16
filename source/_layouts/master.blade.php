@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/main.css">
   @if($page->analyticsTrackingCode)
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ $page->analyticsTrackingCode }}"></script>
   <script>
@@ -18,7 +18,9 @@
   @endif
 </head>
 <body>
+  @yield('header')
   @yield('body')
-  <script src="/assets/js/main.js"></script>
+  @include('_partials/footer')
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

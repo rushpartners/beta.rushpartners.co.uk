@@ -1,37 +1,44 @@
 .home {
-  &__brandslist {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 52px;
-    text-align: center;
-    clear: both;
-    width: 100%;
+  &-brands {
+    &__list {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 52px;
+      text-align: center;
+      clear: both;
+      width: 100%;
 
-    > * {
-      padding: 20px 0;
-      flex: 1 0 calc(#{percentage(1/3)} - 10px);
-
-      &:nth-child(3n+1) {
-        text-align: left;
+      > * {
+        padding: 20px;
+        flex: 1 0 calc(#{percentage(1/3)} - 10px);
       }
-      &:nth-child(3n+3) {
-        text-align: right;
+
+      @media (min-width: 1440px) {
+        justify-content: space-around;
+      }
+      @media (min-width: 1921px) {
+        > * {
+          flex: 1 0 auto;
+          &:nth-child(n) {
+            text-align: center;
+          }
+        }
       }
     }
   }
 
-  &__innovative {
+  &-learn-more {
     background: linear-gradient(174.94deg, $col-orange 0%, $col-orangered 59.73%, $col-red-light 74.7%, $col-red 100%);
-    margin-top: -250px;
+    margin-top: -290px;
     height: 451px;
     padding: 290px 96px 0;
     position: relative;
     z-index: 1;
   }
 
-  &__passion {
+  &-passion {
     background: url(/images/bg-casino.jpg) no-repeat left center / calc(100% - 380px - 6rem) auto;
     min-height: 570px;
 
@@ -40,7 +47,7 @@
     }
   }
 
-  &__user-in-mind {
+  &-adapt {
     background: url(/images/bg-smartphones.jpg) no-repeat center top / 100% auto;
     min-height: 692px;
 
@@ -49,7 +56,7 @@
     }
   }
 
-  &__team {
+  &-team {
     background: url(/images/bg-team.jpg) no-repeat center calc(68px + 2rem) / calc(100% - 380px - 6rem) auto;
     min-height: 800px;
 
@@ -58,7 +65,7 @@
     }
   }
 
-  &__work {
+  &-jobs {
     ul {
       display: table;
       width: 100%;
@@ -77,14 +84,19 @@
       }
     }
 
-    &-dept {
+    &__dept {
       font-size: 14px;
       color: $col-cyan;
       text-transform: uppercase;
     }
 
-    &-location {
+    &__location {
       font-style: italic;
+    }
+
+    &__cta-preface {
+      line-height: #{26px + 20*2 + 3*2}; // Match button height
+      margin: 0;
     }
   }
 
@@ -106,6 +118,7 @@
           position: absolute;
           letter-spacing: 10px;
         }
+
         &:first-child:before, &:last-child:after {
           content: '';
           display: inline-block;
@@ -117,6 +130,7 @@
           position: relative;
           top: -2px;
         }
+
         &:first-child {
           left: 0;
           top: 280px;
@@ -125,6 +139,7 @@
             margin-right: 20px;
           }
         }
+
         &:last-child {
           right: 0;
           top: 500px;
@@ -147,8 +162,7 @@
       }
     }
 
-    // Call to action
-    &__cta {
+    &__cta { // Call to action
       $title-width: 859px;
       width: $title-width;
       padding: 57px 0 170px;
