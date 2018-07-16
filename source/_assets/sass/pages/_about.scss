@@ -1,0 +1,27 @@
+.about {
+  &-summary {
+    font: 18px/32px $font;
+  }
+  &-tiles {
+    &__row {
+      display: flex;
+      align-items: center;
+      align-content: stretch;
+
+      > * {
+        flex: 1 1;
+        flex-flow: row nowrap;
+      }
+
+      &:nth-child(even) {
+        flex-flow: row-reverse nowrap;
+      }
+
+      @media (max-width: 991px) {
+        &:nth-child(n) {
+          flex-flow: column nowrap;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.socials {
+  flex: 1 1 auto;
+
+  a {
+    display: block;
+    padding: 20px 0;
+    position: relative;
+
+    img {
+      transition: $trans;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.4);
+      }
+    }
+    &:before {
+      @extend %pseudo;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(#fff, .08);
+      border-radius: 999px;
+      transition: all .1s ease-out;
+      transform: scale(0);
+      opacity: 0;
+    }
+
+    &:hover:focus {
+      &:before {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  }
+
+  img {
+    vertical-align: middle;
+  }
+}
