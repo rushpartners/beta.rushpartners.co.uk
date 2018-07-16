@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <base href="/"/>
-  <title>Rush Partners Ltd – Revolutionizing the sports betting industry</title>
+  <base href="{{ $page->baseUrl }}">
+  <title>{{ $page->title }}</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no,  user-scalable = no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="theme-color" content="#ce242c">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="stylesheet" href="assets/css/main.css">
   @if($page->analyticsTrackingCode)
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ $page->analyticsTrackingCode }}"></script>
