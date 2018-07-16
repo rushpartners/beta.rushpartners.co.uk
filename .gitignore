@@ -5,6 +5,7 @@
 # Build and generated
 /build_local/
 /source/assets/
+/_tmp/
 
 # IDE and OS specific
 .idea
