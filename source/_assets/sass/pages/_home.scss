@@ -23,7 +23,7 @@
   }
 
   &__innovative {
-    background: linear-gradient(174.94deg, #F4835E 0%, #D93F3A 59.73%, #D53535 74.7%, #CE242C 100%);
+    background: linear-gradient(174.94deg, $col-orange 0%, $col-orangered 59.73%, $col-red-light 74.7%, $col-red 100%);
     margin-top: -250px;
     height: 451px;
     padding: 290px 96px 0;
@@ -31,8 +31,65 @@
     z-index: 1;
   }
 
+  &__passion {
+    background: url(/images/bg-casino.jpg) no-repeat left center / calc(100% - 380px - 6rem) auto;
+    min-height: 570px;
+
+    h2 {
+      margin-top: 189px;
+    }
+  }
+
+  &__user-in-mind {
+    background: url(/images/bg-smartphones.jpg) no-repeat center top / 100% auto;
+    min-height: 692px;
+
+    > div {
+      margin-top: 276px;
+    }
+  }
+
+  &__team {
+    background: url(/images/bg-team.jpg) no-repeat center calc(68px + 2rem) / calc(100% - 380px - 6rem) auto;
+    min-height: 800px;
+
+    > div {
+      margin-top: 500px;
+    }
+  }
+
+  &__work {
+    ul {
+      display: table;
+      width: 100%;
+
+      li {
+        display: table-row;
+
+        &:nth-child(2n + 1) > * {
+          background: $col-bg;
+        }
+
+        > * {
+          display: table-cell;
+          padding: 2rem;
+        }
+      }
+    }
+
+    &-dept {
+      font-size: 14px;
+      color: $col-cyan;
+      text-transform: uppercase;
+    }
+
+    &-location {
+      font-style: italic;
+    }
+  }
+
   &-header {
-    background: url(/images/intro-background.jpg) no-repeat center top / cover;
+    background: url(/images/bg-intro.jpg) no-repeat center center / cover;
 
     &__title {
       margin-top: 227px;

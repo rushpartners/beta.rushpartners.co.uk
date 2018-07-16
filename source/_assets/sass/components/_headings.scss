@@ -1,5 +1,4 @@
 .h2 {
-  height: 50px;
   line-height: 50px;
   color: #F6F6F6;
   font: 700 35px/48px $font-strong;
@@ -28,9 +27,16 @@
       left: auto;
     }
   }
+
+  &--blue {
+    &:after {
+      background: linear-gradient(314deg, $col-blue, $col-cyan);
+    }
+  }
 }
 
 .h3 {
   color: $col-white;
   font: italic 600 25px/34px $font-strong;
+  margin-bottom: 20px;
 }
