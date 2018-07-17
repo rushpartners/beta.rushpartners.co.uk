@@ -1,3 +1,12 @@
-/build_local/
+# Dependencies
 /node_modules/
 /vendor/
+
+# Build and generated
+/build_local/
+/source/assets/
+/_tmp/
+
+# IDE and OS specific
+.idea
+.DS_Store
