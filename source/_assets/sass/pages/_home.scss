@@ -20,7 +20,7 @@
       }
       @media (min-width: 1921px) {
         > * {
-          flex: 1 0 auto;
+          flex: 1 0 calc(33.33333333% - 10px);
           &:nth-child(n) {
             text-align: center;
           }
@@ -69,6 +69,7 @@
     ul {
       display: table;
       width: 100%;
+      float: left;
 
       li {
         display: table-row;
@@ -94,9 +95,17 @@
       font-style: italic;
     }
 
+    &__cta {
+      text-align: right;
+    }
+
     &__cta-preface {
       line-height: #{26px + 20*2 + 3*2}; // Match button height
       margin: 0;
+    }
+
+    &__contactus {
+      padding: 0 2rem;
     }
   }
 

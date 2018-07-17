@@ -1,6 +1,6 @@
 <footer class="footer mt-12 lg:mt-20">
   <div class="container mx-auto">
-    <img src="images/logo.svg" class="md:float-left">
+    <img src="images/logo.svg" class="footer__logo md:float-left">
 
     <div class="footer__social md:float-right">
       @include('_partials.socials')
