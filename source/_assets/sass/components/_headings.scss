@@ -14,7 +14,7 @@
     top: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(160deg, $col-orange, $col-red);
+    background: linear-gradient(160deg, config('colors.orange'), config('colors.red'));
   }
 
   &--right {
@@ -30,7 +30,7 @@
 
   &--blue {
     &:after {
-      background: linear-gradient(314deg, $col-blue, $col-cyan);
+      background: linear-gradient(314deg, config('colors.blue'), config('colors.cyan'));
     }
   }
 }

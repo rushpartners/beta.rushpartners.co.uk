@@ -1,7 +1,7 @@
 <header class="header header--extended">
   @include('_partials/nav')
 
-  <h1 class="text-jumbo">
+  <h1 class="text-jumbo font-nunito">
     <span>Feel the Rush</span>
   </h1>
 
@@ -10,7 +10,7 @@
     <span>technology</span>
   </strong>
 
-  <p class="header__intro-text">On a mission to disrupt on the sports betting industry by making the fans always the heart of our business and changing the gambling business for good using the best technologies.</p>
+  <p class="header__intro-text visible sm:invisible md:visible lg:visible xl:visible">On a mission to disrupt on the sports betting industry by making the fans always the heart of our business and changing the gambling business for good using the best technologies.</p>
 
   <div class="header__cta mx-auto">
     <a href="about" class="btn btn--red">Learn more</a>

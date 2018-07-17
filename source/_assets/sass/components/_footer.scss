@@ -1,7 +1,7 @@
 .footer {
   &__legal {
-    color: $col-gray;
-    background: $col-black;
+    color: config('colors.gray');
+    background: config('colors.black');
 
     a {
       color: inherit;
@@ -9,7 +9,7 @@
       transition: $trans;
 
       &:hover {
-        color: $col-white;
+        color: config('colors.white');
       }
     }
   }
@@ -19,7 +19,7 @@
   }
 
   &__text-white {
-    color: #fff;
+    color: config('colors.white');
   }
 
   &__social {
@@ -49,7 +49,7 @@
       }
 
       &:hover {
-        color: $col-orangered;
+        color: config('colors.orangered');
         transition: $trans;
 
         &:after {

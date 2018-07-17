@@ -39,7 +39,7 @@ p {
     @extend %pseudo;
     bottom: 0;
     right: 18px;
-    background: linear-gradient(-90deg, $col-orange, $col-red);
+    background: linear-gradient(-90deg, config('colors.orange'), config('colors.red'));
     width: 55%;
     height: 58px;
   }
@@ -49,11 +49,11 @@ p {
 }
 
 .block-dark {
-  background: $col-bg-gray;
+  background: config('colors.bg-gray');
   padding: 50px;
 }
 
 ::selection {
-  background: $col-red;
-  color: #fff;
+  background: config('colors.red');
+  color: config('colors.white');
 }
