@@ -1,0 +1,53 @@
+.footer {
+  &__legal {
+    color: $col-gray;
+    background: $col-black;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  &__text-white {
+    color: #fff;
+  }
+
+  &__social {
+    width: 250px;
+  }
+
+  &__nav {
+    margin-left: -1rem;
+  }
+
+  &__sites {
+    margin-right: -1rem;
+  }
+
+  &__nav, &__sites {
+    a {
+      position: relative;
+      color: inherit;
+
+      &:after {
+        @extend %pseudo;
+        bottom: -2px;
+        background: rgba(#fff, .4);
+        left: 0;
+        right: 100%;
+        height: 2px;
+        transition: all .17s linear;
+      }
+
+      &:hover {
+        &:after {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  strong {
+    font-weight: 600;
+  }
+}

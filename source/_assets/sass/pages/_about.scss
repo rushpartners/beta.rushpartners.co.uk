@@ -1,5 +1,6 @@
 .about {
   &-summary {
+    background: darken($col-bg, 2%);
     font: 18px/32px $font;
   }
   &-tiles {

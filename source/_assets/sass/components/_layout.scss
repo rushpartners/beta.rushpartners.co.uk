@@ -8,6 +8,10 @@ body {
   @media (min-width: 1200px) {
     max-width: 1440px;
   }
+
+  @media (min-width: 992px) {
+    max-width: 1080px;
+  }
 }
 
 a {
