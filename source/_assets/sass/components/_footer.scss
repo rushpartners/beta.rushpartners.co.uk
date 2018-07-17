@@ -5,7 +5,17 @@
 
     a {
       color: inherit;
+      padding-left: 1rem;
+      transition: $trans;
+
+      &:hover {
+        color: $col-white;
+      }
     }
+  }
+
+  &__logo {
+    margin-bottom: 1rem;
   }
 
   &__text-white {
@@ -21,7 +31,7 @@
   }
 
   &__sites {
-    margin-right: -1rem;
+    margin-bottom: 1rem;
   }
 
   &__nav, &__sites {
@@ -32,7 +42,6 @@
       &:after {
         @extend %pseudo;
         bottom: -2px;
-        background: rgba(#fff, .4);
         left: 0;
         right: 100%;
         height: 2px;
@@ -40,6 +49,9 @@
       }
 
       &:hover {
+        color: $col-orangered;
+        transition: $trans;
+
         &:after {
           right: 0;
         }
