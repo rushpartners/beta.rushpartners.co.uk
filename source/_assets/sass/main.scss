@@ -1,21 +1,17 @@
-/**
- * Import any google/fontstack/adobe fonts here
- *
- * @import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
- */
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,600i,700,700i|Nunito+Sans:600i,700,700i,800,800i,900i');
 
 @tailwind preflight;
 
 @tailwind components;
 
-/**
- * Import your own components here
- *
- * @import "components/buttons";
- * @import "components/forms";
- */
+@import 'vars';
+@import 'reset';
+@import 'utilities';
+@import 'components/components';
+@import 'pages/about';
+@import 'pages/home';
 
- @tailwind utilities;
+@tailwind utilities;
 
 /**
  * Import any utility files here.

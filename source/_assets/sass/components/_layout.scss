@@ -1,0 +1,59 @@
+body {
+  background: $col-bg;
+  color: #fff;
+  font: 400 14px/26px $font;
+}
+
+.container {
+  @media (min-width: 1200px) {
+    max-width: 1440px;
+  }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+p {
+  font: 300 17px/32px $font;
+  letter-spacing: .6px;
+}
+
+%pseudo {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+.text-jumbo {
+  font: italic 900 110px/110px $font-strong;
+  text-transform: uppercase;
+  position: relative;
+
+  span {
+    position: relative;
+  }
+
+  &:before {
+    @extend %pseudo;
+    bottom: 0;
+    right: 18px;
+    background: linear-gradient(-90deg, $col-orange, $col-red);
+    width: 55%;
+    height: 58px;
+  }
+  @media (max-width: 991px) {
+    font-size: 90px;
+  }
+}
+
+.block-dark {
+  background: $col-bg-gray;
+  padding: 50px;
+}
+
+::selection {
+  background: $col-red;
+  color: #fff;
+}

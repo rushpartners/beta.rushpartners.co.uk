@@ -1,0 +1,42 @@
+.h2 {
+  line-height: 50px;
+  color: #F6F6F6;
+  font: 700 35px/48px $font-strong;
+  text-transform: uppercase;
+  position: relative;
+  padding-left: 30px;
+  text-align: left;
+  margin-bottom: 20px;
+
+  &:after {
+    @extend %pseudo;
+    width: 5px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(160deg, $col-orange, $col-red);
+  }
+
+  &--right {
+    text-align: right;
+    padding-right: 30px;
+    padding-left: 0;
+
+    &:after {
+      right: 0;
+      left: auto;
+    }
+  }
+
+  &--blue {
+    &:after {
+      background: linear-gradient(314deg, $col-blue, $col-cyan);
+    }
+  }
+}
+
+.h3 {
+  color: $col-white;
+  font: italic 600 25px/34px $font-strong;
+  margin-bottom: 20px;
+}

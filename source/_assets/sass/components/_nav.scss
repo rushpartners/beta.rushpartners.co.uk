@@ -1,0 +1,28 @@
+.nav {
+  padding: 30px 30px 0;
+  display: flex;
+
+  &__logo {
+    flex: 0 0 131px;
+  }
+
+  &__menu {
+    font: italic 800 14px $font;
+    text-transform: uppercase;
+    flex: 3 1 auto;
+
+    ul {
+      max-width: 800px;
+      margin: 0 auto;
+
+      li {
+        flex: 1 1 auto;
+
+        a {
+          display: inline-block;
+          padding: 25px;
+        }
+      }
+    }
+  }
+}
