@@ -240,7 +240,7 @@ module.exports = {
       'Courier New',
       'monospace',
     ],
-    'muli': [
+    'body': [
       'Muli',
       'BlinkMacSystemFont',
       '-apple-system',

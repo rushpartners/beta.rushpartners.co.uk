@@ -1,8 +1,7 @@
 .h2 {
   line-height: 50px;
   color: #F6F6F6;
-  font: 700 35px/48px $font-strong;
-  text-transform: uppercase;
+  @apply .font-body .text-3xl .font-bold .uppercase	;
   position: relative;
   padding-left: 30px;
   text-align: left;
@@ -37,6 +36,6 @@
 
 .h3 {
   color: config('colors.white');
-  font: italic 600 25px/34px $font-strong;
+  @apply .font-strong .text-2xl .font-bold  .italic ;
   margin-bottom: 20px;
 }

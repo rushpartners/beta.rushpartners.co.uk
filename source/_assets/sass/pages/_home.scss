@@ -1,5 +1,9 @@
 .home {
   &-brands {
+    @media (max-width: 968px) {
+      margin: 0px !important;
+    }
+
     &__list {
       display: flex;
       flex-flow: row wrap;
@@ -9,6 +13,7 @@
       text-align: center;
       clear: both;
       width: 100%;
+
 
       > * {
         padding: 20px;
@@ -44,14 +49,34 @@
     padding: 290px 96px 0;
     position: relative;
     z-index: 1;
+
+    @media (max-width: 968px) {
+      height: auto;
+      @apply .p-10 ;
+      text-align: center;
+      margin-top:0px;
+    }
+    p {
+      @media (max-width: 968px) {
+        @apply .w-full
+      }
+    }
+
   }
 
   &-passion {
     background: url(/images/bg-casino.jpg) no-repeat left center / calc(100% - 380px - 6rem) auto;
     min-height: 570px;
 
+    @media (max-width: 968px) {
+      background-image: none;
+    }
     h2 {
       margin-top: 189px;
+
+      @media (max-width: 968px) {
+        @apply .mt-5
+      }
     }
   }
 
@@ -78,6 +103,7 @@
       display: table;
       width: 100%;
       float: left;
+      @apply .text-base ;
 
       li {
         display: table-row;

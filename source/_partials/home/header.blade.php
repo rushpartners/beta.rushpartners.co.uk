@@ -1,7 +1,7 @@
 <header class="header header--extended">
   @include('_partials/nav')
 
-  <h1 class="text-jumbo font-nunito">
+  <h1 class="text-jumbo">
     <span>Feel the Rush</span>
   </h1>
 

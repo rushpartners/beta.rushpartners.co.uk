@@ -7,8 +7,7 @@
   }
 
   &__menu {
-    font: italic 800 14px $font;
-    text-transform: uppercase;
+    @apply .font-body .text-base .font-extrabold .italic .uppercase ;
     flex: 3 1 auto;
 
     ul {

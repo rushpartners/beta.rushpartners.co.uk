@@ -1,7 +1,7 @@
 body {
   background: config('colors.bg');
   color: #fff;
-  font: 400 14px/26px $font;
+  @apply .font-body .text-xl .font-normal	;
 }
 
 .container {
@@ -16,7 +16,7 @@ a {
 }
 
 p {
-  font: 300 17px/32px $font;
+  @apply .font-body .font-light	 .text-base	.leading-normal	;
   letter-spacing: .6px;
 }
 
@@ -27,8 +27,7 @@ p {
 }
 
 .text-jumbo {
-  font: italic 900 110px/110px $font-strong;
-  text-transform: uppercase;
+  @apply .font-strong .font-extrabold .text-5xl	 .italic	.uppercase	;
   position: relative;
 
   span {

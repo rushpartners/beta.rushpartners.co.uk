@@ -1,7 +1,7 @@
 .about {
   &-summary {
     background: config('colors.bg');
-    font: 18px/32px $font;
+    @apply .font-body .font-light	 .text-xl	.leading-normal	;
   }
   &-tiles {
     &__row {
