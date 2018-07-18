@@ -36,7 +36,7 @@
 }
 
 .h3 {
-  color: $col-white;
+  color: config('colors.white');
   font: italic 600 25px/34px $font-strong;
   margin-bottom: 20px;
 }

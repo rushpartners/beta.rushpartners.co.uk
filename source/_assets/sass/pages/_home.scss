@@ -38,7 +38,7 @@
   }
 
   &-learn-more {
-    background: linear-gradient(174.94deg, $col-orange 0%, $col-orangered 59.73%, $col-red-light 74.7%, $col-red 100%);
+    background: linear-gradient(174.94deg, config('colors.orange') 0%, config('colors.orangered') 59.73%, config('colors.red-light') 74.7%, config('colors.red') 100%);
     margin-top: -290px;
     height: 451px;
     padding: 290px 96px 0;
@@ -83,7 +83,7 @@
         display: table-row;
 
         &:nth-child(2n + 1) > * {
-          background: $col-bg;
+          background: config('colors.bg');
         }
 
         > * {
@@ -95,7 +95,7 @@
 
     &__dept {
       font-size: 14px;
-      color: $col-cyan;
+      color: config('colors.cyan');
       text-transform: uppercase;
     }
 

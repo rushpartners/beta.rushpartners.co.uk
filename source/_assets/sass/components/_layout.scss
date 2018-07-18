@@ -1,5 +1,5 @@
 body {
-  background: $col-bg;
+  background: config('colors.bg');
   color: #fff;
   font: 400 14px/26px $font;
 }
