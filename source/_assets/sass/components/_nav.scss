@@ -11,16 +11,133 @@
     text-transform: uppercase;
     flex: 3 1 auto;
 
-    ul {
+    > ul {
       max-width: 800px;
       margin: 0 auto;
+    }
+  }
+
+  &__item {
+    flex: 1 1 auto;
+
+    > a {
+      display: inline-block;
+      padding: 25px;
+      transition: $trans;
+
+      @media (max-width: 850px) {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      &:hover {
+        color: $col-pink;
+      }
+    }
+
+    &--dropdown {
+      > a {
+        position: relative;
+
+        &:before {
+          @extend %pseudo;
+          display: none;
+          bottom: -33px;
+          left: calc(50% - 35px);
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 30px 30px 30px;
+          border-color: transparent transparent $col-bg-gray transparent;
+        }
+
+        &:after {
+          content: '';
+          display: inline-block;
+          background: url(/images/icons/dropdown-arrow.svg) no-repeat right center / contain;
+          width: 20px;
+          height: 20px;
+          vertical-align: middle;
+          transition: $trans;
+          position: relative;
+          margin-left: 4px;
+        }
+
+        &:hover { // Dropdown icon
+          &:after {
+            transform: translateY(2px);
+          }
+        }
+      }
+    }
+
+    &--open {
+      > a {
+        color: $col-pink;
+
+        &:before {
+          display: inline-block;
+        }
+
+        &:after {
+          transform: rotateZ(180deg);
+        }
+
+        &:hover {
+          &:after {
+            transform: rotateZ(180deg) translateY(2px);
+          }
+        }
+      }
+
+      .nav__dropdown {
+        display: block;
+      }
+    }
+  }
+
+  &__dropdown {
+    display: none;
+    position: absolute;
+    top: 130px;
+    left: 2.3vw;
+    right: 2.3vw;
+    background: $col-bg-gray;
+    z-index: 50;
+    box-shadow: 0 20px 45px 0 rgba(0,0,0,.41);
+
+    ul {
+      display: flex;
 
       li {
-        flex: 1 1 auto;
+        flex: 1 0 percentage(1/6);
+        display: flex;
+        align-items: center;
+
+        &:nth-child(5) { // Fit vertical "fansbet" logo
+          flex: 1 1 percentage(1/12);
+        }
 
         a {
-          display: inline-block;
-          padding: 25px;
+          padding: 20px;
+          opacity: .4;
+          transition: $trans;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+
+      @media (max-width: 639px) {
+        flex-wrap: wrap;
+
+        li {
+          flex: 1 0 percentage(1/3);
+
+          &:nth-child(5) {
+            flex: 1 1 percentage(1/6);
+          }
         }
       }
     }

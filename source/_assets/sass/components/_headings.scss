@@ -1,4 +1,4 @@
-.h2 {
+h2, .h2 {
   line-height: 50px;
   color: #F6F6F6;
   font: 700 35px/48px $font-strong;
@@ -7,35 +7,24 @@
   padding-left: 30px;
   text-align: left;
   margin-bottom: 20px;
+  @extend .line;
 
-  &:after {
-    @extend %pseudo;
-    width: 5px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(160deg, $col-orange, $col-red);
+  &--center {
+    text-align: center;
+    padding: 0 0 10px;
+    margin-bottom: 25px; // Take border into account
+    @extend .line--center;
   }
 
   &--right {
     text-align: right;
     padding-right: 30px;
     padding-left: 0;
-
-    &:after {
-      right: 0;
-      left: auto;
-    }
-  }
-
-  &--blue {
-    &:after {
-      background: linear-gradient(314deg, $col-blue, $col-cyan);
-    }
+    @extend .line--right;
   }
 }
 
-.h3 {
+h3, .h3 {
   color: $col-white;
   font: italic 600 25px/34px $font-strong;
   margin-bottom: 20px;

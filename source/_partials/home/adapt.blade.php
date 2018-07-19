@@ -1,4 +1,4 @@
-<section class="home-adapt p-20 mt-32 clearfix container mx-auto">
+<section class="home/adapt p-20 mt-32 clearfix container mx-auto">
   <h2 class="h2 h2--right lg:float-left">
     <span class="lg:block">With the user</span> <span class="lg:block">always in mind</span>
   </h2>

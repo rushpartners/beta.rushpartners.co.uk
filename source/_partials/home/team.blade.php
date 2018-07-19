@@ -1,4 +1,4 @@
-<section class="home-team clearfix container mx-auto">
+<section class="home/team clearfix container mx-auto">
   <h2 class="h2 h2--right">
     Meet the team
   </h2>

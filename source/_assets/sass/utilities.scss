@@ -17,3 +17,21 @@
 .content-box {
   box-sizing: border-box;
 }
+
+.animation-run {
+  animation-play-state: running !important;
+}
+
+%pseudo {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+%clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

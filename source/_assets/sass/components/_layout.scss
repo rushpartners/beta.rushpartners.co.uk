@@ -20,12 +20,6 @@ p {
   letter-spacing: .6px;
 }
 
-%pseudo {
-  content: '';
-  display: block;
-  position: absolute;
-}
-
 .text-jumbo {
   font: italic 900 110px/110px $font-strong;
   text-transform: uppercase;
@@ -50,10 +44,54 @@ p {
 
 .block-dark {
   background: $col-bg-gray;
-  padding: 50px;
+  padding: 1.5rem;
+
+  @media (min-width: 576px) {
+    padding: 2rem;
+  }
+  @media (min-width: 992px) {
+    padding: 3rem;
+  }
 }
 
 ::selection {
   background: $col-red;
   color: #fff;
+}
+
+.line { // Defaults to left
+  position: relative;
+
+  &:after {
+    @extend %pseudo;
+    width: $line-width;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(160deg, $col-orange, $col-red);
+  }
+
+  &--right {
+    &:after {
+      right: 0;
+      left: auto;
+    }
+  }
+
+  &--center {
+    &:after {
+      width: 64px;
+      height: $line-width;
+      bottom: -$line-width;
+      top: auto;
+      left: 50%;
+      margin-left: -32px;
+    }
+  }
+
+  &--blue {
+    &:after {
+      background: linear-gradient(314deg, $col-blue, $col-cyan);
+    }
+  }
 }

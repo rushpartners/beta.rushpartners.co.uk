@@ -9,6 +9,7 @@
 
     img {
       transition: $trans;
+      vertical-align: middle;
     }
 
     &:hover {
@@ -37,7 +38,9 @@
     }
   }
 
-  img {
-    vertical-align: middle;
+  @media (max-width: 850px) {
+    a {
+      width: 25px;
+    }
   }
 }
