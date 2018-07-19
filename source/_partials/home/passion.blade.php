@@ -2,9 +2,6 @@
   <h2 class="h2 text-right float-right">
     Driven by passion
   </h2>
-
-  <img style="dislay: none;" src="/images/bg-casino.jpg">
-
   <div class="block-dark lg:w-1/2 lg:float-right sm:w-full  clear">
     <h3 class="h3">Working on creating better user experiences</h3>
 

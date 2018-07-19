@@ -5,6 +5,11 @@
   &__logo {
     flex: 0 0 131px;
   }
+  @media (max-width: 968px) {
+  .social {
+      @apply .hidden ;
+    }
+  }
 
   &__menu {
     @apply .font-body .text-base .font-extrabold .italic .uppercase ;
@@ -23,5 +28,13 @@
         }
       }
     }
+  }
+  &__social {
+    width: 250px;
+
+    @media (max-width: 968px) {
+      display:none !important;
+    }
+
   }
 }
