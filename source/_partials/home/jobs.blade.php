@@ -12,7 +12,9 @@
         <div class="home/jobs__dept">Engineering</div>
         <div class="home/jobs__location">London, England</div>
         <div class="home/jobs__cta">
-          <a href="https://rush-partners.workable.com/j/A085FF3CA9" target="_blank" class="btn btn--cyan">Apply now</a>
+          <a href="https://rush-partners.workable.com/j/A085FF3CA9" target="_blank" class="btn btn--cyan whitespace-no-wrap">
+            Apply now
+          </a>
         </div>
       </li>
       <li>
@@ -20,7 +22,9 @@
         <div class="home/jobs__dept">Engineering</div>
         <div class="home/jobs__location">London, England</div>
         <div class="home/jobs__cta">
-          <a href="https://rush-partners.workable.com/j/BC32432778" target="_blank" class="btn btn--cyan">Apply now</a>
+          <a href="https://rush-partners.workable.com/j/BC32432778" target="_blank" class="btn btn--cyan whitespace-no-wrap">
+            Apply now
+          </a>
         </div>
       </li>
       <li>
@@ -28,7 +32,9 @@
         <div class="home/jobs__dept">Engineering</div>
         <div class="home/jobs__location">London, England</div>
         <div class="home/jobs__cta">
-          <a href="https://rush-partners.workable.com/j/34B1C316F2" target="_blank" class="btn btn--cyan">Apply now</a>
+          <a href="https://rush-partners.workable.com/j/34B1C316F2" target="_blank" class="btn btn--cyan whitespace-no-wrap">
+            Apply now
+          </a>
         </div>
       </li>
       <li>
@@ -36,7 +42,9 @@
         <div class="home/jobs__dept">Engineering</div>
         <div class="home/jobs__location">London, England</div>
         <div class="home/jobs__cta">
-          <a href="https://rush-partners.workable.com/j/6E08A60370" target="_blank" class="btn btn--cyan">Apply now</a>
+          <a href="https://rush-partners.workable.com/j/6E08A60370" target="_blank" class="btn btn--cyan whitespace-no-wrap">
+            Apply now
+          </a>
         </div>
       </li>
       <li>
@@ -44,7 +52,9 @@
         <div class="home/jobs__dept">Engineering</div>
         <div class="home/jobs__location">London - part remote</div>
         <div class="home/jobs__cta">
-          <a href="https://rush-partners.workable.com/j/43813D0E80" target="_blank" class="btn btn--cyan">Apply now</a>
+          <a href="https://rush-partners.workable.com/j/43813D0E80" target="_blank" class="btn btn--cyan whitespace-no-wrap">
+            Apply now
+          </a>
         </div>
       </li>
     </ul>

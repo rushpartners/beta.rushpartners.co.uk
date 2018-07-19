@@ -35,7 +35,7 @@
       }
 
       &:hover {
-        color: $col-pink;
+        color: config('colors.red-pink');
       }
     }
 
@@ -52,7 +52,7 @@
           height: 0;
           border-style: solid;
           border-width: 0 30px 30px 30px;
-          border-color: transparent transparent $col-bg-gray transparent;
+          border-color: transparent transparent config('colors.bg-gray') transparent;
         }
 
         &:after {
@@ -77,7 +77,7 @@
 
     &--open {
       > a {
-        color: $col-pink;
+        color: config('colors.red-pink');
 
         &:before {
           display: inline-block;
@@ -106,7 +106,7 @@
     top: 130px;
     left: 2.3vw;
     right: 2.3vw;
-    background: $col-bg-gray;
+    background: config('colors.bg-gray');
     z-index: 50;
     box-shadow: 0 20px 45px 0 rgba(0,0,0,.41);
 

@@ -25,7 +25,8 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  color: $col-white;
-  font: italic 600 25px/34px $font-strong;
+  color: config('colors.white');
+  font: italic 600 25px/34px;
+  @apply .font-strong;
   margin-bottom: 20px;
 }
