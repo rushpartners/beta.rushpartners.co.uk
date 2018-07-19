@@ -4,11 +4,11 @@
   &__legal {
     color: config('colors.gray');
     background: config('colors.black');
-    @apply .text-sm ;
+    @apply .text-sm;
 
     @media (max-width: 968px) {
       text-align: center !important;
-      @apply .leading-loose .px-5	;
+      @apply .leading-loose .px-5;
     }
 
     a {
@@ -53,7 +53,7 @@
   &__nav {
     margin-left: -1rem;
     @media (max-width: 968px) {
-      @apply .text-center .leading-loose ;
+      @apply .text-center .leading-loose;
       padding-left: 0 !important;
     }
   }
@@ -70,7 +70,7 @@
     a {
       position: relative;
       color: inherit;
-      @apply .text-base ;
+      @apply .text-base;
 
       &:after {
         @extend %pseudo;
