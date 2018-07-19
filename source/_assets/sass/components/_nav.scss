@@ -5,10 +5,14 @@
   &__logo {
     flex: 0 0 131px;
   }
+  @media (max-width: 968px) {
+  .social {
+      @apply .hidden ;
+    }
+  }
 
   &__menu {
-    font: italic 800 14px $font;
-    text-transform: uppercase;
+    @apply .font-body .text-base .font-extrabold .italic .uppercase ;
     flex: 3 1 auto;
 
     > ul {
@@ -141,5 +145,13 @@
         }
       }
     }
+  }
+  &__social {
+    width: 250px;
+
+    @media (max-width: 968px) {
+      display:none !important;
+    }
+
   }
 }

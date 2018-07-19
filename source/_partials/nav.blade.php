@@ -3,8 +3,8 @@
     <img src="images/logo.svg" />
   </a>
 
-  <nav class="nav__menu">
-    <ul class="list-reset flex flex-no-wrap items-stretch content-center justify-around">
+  <nav class="w-full flex-grow sm:w-auto nav__menu">
+    <ul class="list-reset flex flex-no-wrap items-center content-center justify-around">
       <li class="nav__item nav__item--dropdown">
         <a href="" dropdown>Brands</a>
         <div class="nav__dropdown">
@@ -23,5 +23,7 @@
     </ul>
   </nav>
 
-  @include('_partials.socials')
+  <div class="nav__social md:float-right pr-10">
+    @include('_partials.socials')
+  </div>
 </div>

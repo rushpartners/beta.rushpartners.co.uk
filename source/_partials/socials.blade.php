@@ -1,4 +1,4 @@
-<ul class="socials list-reset flex flex-no-wrap items-stretch content-center">
+<ul class="socials list-reset w-1/8 flex flex-no-wrap items-stretch content-center">
   <li class="flex-1">
     <a href="{{ $page->facebookUrl }}" target="_blank">
       <img src="images/social/facebook.svg" alt="Facebook" />

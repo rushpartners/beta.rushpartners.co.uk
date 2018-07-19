@@ -1,5 +1,10 @@
 .home {
   &\/brands {
+    @media (max-width: 968px) {
+      margin: 0 !important;
+      max-width: 100%;
+    }
+
     &__list {
       ul {
         display: flex;
@@ -21,7 +26,15 @@
         }
         @media (min-width: 1921px) {
           > * {
-            flex: 1 0 auto;
+            flex: 1 0 calc(#{percentage(1/3)} - 10px);
+            &:nth-child(n) {
+              text-align: center;
+            }
+          }
+        }
+        @media (max-width: 800px) {
+          > * {
+            flex: 100%;
             &:nth-child(n) {
               text-align: center;
             }
@@ -32,20 +45,41 @@
   }
 
   &\/learn-more {
-    background: linear-gradient(174.94deg, $col-orange 0%, $col-orangered 59.73%, $col-red-light 74.7%, $col-red 100%);
+    background: linear-gradient(174.94deg, config('colors.orange') 0%, config('colors.orangered') 59.73%, config('colors.red-light') 74.7%, config('colors.red') 100%);
     margin-top: -290px;
     height: 451px;
     padding: 290px 96px 0;
     position: relative;
     z-index: 1;
+
+    @media (max-width: 968px) {
+      height: auto;
+      @apply .p-10;
+      text-align: center;
+      margin-top:0px;
+    }
+
+    p {
+      @media (max-width: 968px) {
+        @apply .w-full;
+      }
+    }
+
   }
 
   &\/passion {
     background: url(/images/bg-casino.jpg) no-repeat left center / calc(100% - 380px - 6rem) auto;
     min-height: 570px;
 
+    @media (max-width: 968px) {
+      background-image: none;
+    }
     h2 {
       margin-top: 189px;
+
+      @media (max-width: 968px) {
+        @apply .mt-5;
+      }
     }
   }
 
@@ -71,24 +105,40 @@
     ul {
       display: table;
       width: 100%;
+      float: left;
+      @apply .text-base;
+
+      @media (max-width: 968px) {
+        @apply .mt-8;
+      }
 
       li {
         display: table-row;
 
+        @media (max-width: 968px) {
+          display: grid;
+          @apply .mt-5 .mb-0;
+        }
+
         &:nth-child(2n + 1) > * {
-          background: $col-bg;
+          background: config('colors.bg');
         }
 
         > * {
           display: table-cell;
           padding: 2rem;
+
+          @media (max-width: 968px) {
+            padding: 2rem;
+            @apply .mb-0 .text-center;
+          }
         }
       }
     }
 
     &__dept {
       font-size: 14px;
-      color: $col-cyan;
+      color: config('colors.cyan');
       text-transform: uppercase;
     }
 
@@ -96,9 +146,29 @@
       font-style: italic;
     }
 
+    &__cta {
+      text-align: right;
+    }
+
     &__cta-preface {
       line-height: #{26px + 20*2 + 3*2}; // Match button height
       margin: 0;
+
+      @media (max-width: 968px) {
+        line-height:36px;
+      }
+    }
+
+    &__contactus {
+      padding: 0 2rem;
+
+      @media (max-width: 968px) {
+        @apply .text-center;
+
+        & .btn {
+          @apply .mt-5 .text-center .float-none;
+        }
+      }
     }
   }
 

@@ -1,14 +1,14 @@
 h2, .h2 {
   line-height: 50px;
   color: #F6F6F6;
-  font: 700 35px/48px $font-strong;
-  text-transform: uppercase;
+  @apply .font-body .text-3xl .font-bold .uppercase	;
   position: relative;
   padding-left: 30px;
   text-align: left;
   margin-bottom: 20px;
   @extend .line;
-
+  //background: linear-gradient(160deg, config('colors.orange'), config('colors.red'));
+  //background: linear-gradient(314deg, config('colors.blue'), config('colors.cyan'));
   &--center {
     text-align: center;
     padding: 0 0 10px;

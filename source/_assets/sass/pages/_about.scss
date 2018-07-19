@@ -1,7 +1,7 @@
 .about {
-  &\/summary {
-    background: darken($col-bg, 2%);
-    font: 18px/32px $font;
+  &-summary {
+    background: config('colors.bg');
+    @apply .font-body .font-light	 .text-xl	.leading-normal	;
   }
 
   &\/tiles {
