@@ -5,7 +5,7 @@
 
 
 
-  <div class="w-full flex-grow sm:flex sm:items-center justify-center nav__menu">
+  <div class="w-full hidden sm:block flex-grow sm:flex sm:items-center justify-center nav__menu">
     <div class="list-reset flex flex-no-wrap items-center content-center justify-around">
       <div class="block mt-4 mx-10 sm:inline-block sm:mt-0  nav__item nav__item--dropdown">
         <a href="" dropdown>Brands</a>

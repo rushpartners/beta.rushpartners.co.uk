@@ -1,4 +1,4 @@
-<section class="home/jobs block-dark my-32 -mb-6">
+<section class="home/jobs block-dark my-12 mt-0 sm:my-12 -mb-6">
   <div class="p-10 container mx-auto">
     <h2 class="h2 h2--right h2--blue">
       Work with us
@@ -60,7 +60,7 @@
     </ul>
 
     <div class="clearfix home/jobs__contactus">
-      <span class="h3 float-left home/jobs__cta-preface sm:float-none">Didn't find anything that fits you?</span>
+      <span class="h3 home/jobs__cta-preface float-left md:float-left sm:float-none">Didn't find anything that fits you?</span>
       <a href="https://rush-partners.workable.com/j/33B96589B1" target="_blank" class="btn btn-jobs-contactus btn--hollow float-right">Contact us</a>
     </div>
   </div>

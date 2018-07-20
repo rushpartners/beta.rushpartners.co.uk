@@ -1,5 +1,5 @@
-<section class="home/adapt p-20 mt-32 clearfix container mx-auto">
-  <h2 class="h2 h2--right lg:float-left">
+<section class="home/adapt p-0 mb-0 lg:p-12 sm:p-0 sm:mb-8 mt-0 sm:mt-32 clearfix container mx-auto">
+  <h2 class="h2 h2--right lg:float-left  mr-10 sm:mr-0 mt-8 sm:mt-0">
     <span class="lg:block">With the user</span> <span class="lg:block">always in mind</span>
   </h2>
 

@@ -72,32 +72,65 @@
     min-height: 570px;
 
     @media (max-width: 968px) {
-      background-image: none;
+      background-size: 100%;
+      background-position: center top;
+      background-position-y:6em;
+    }
+    .block-dark {
+      box-shadow: 0 20px 60px -12px #0B0B0C;
+
+      @media (max-width: 968px) {
+          margin-top: 13em;
+          float: left;
+          width: 100%;
+        }
     }
     h2 {
       margin-top: 189px;
 
       @media (max-width: 968px) {
-        @apply .mt-5;
+        @apply .mt-10 .float-left .ml-10 ;
       }
     }
   }
 
   &\/adapt {
     background: url(/images/bg-smartphones.jpg) no-repeat center top / 100% auto;
-    min-height: 692px;
+    min-height: auto;
 
     > div {
       margin-top: 276px;
+      box-shadow: 0 20px 60px -12px #0B0B0C;
+
+    }
+
+    @media (max-width: 968px) {
+      background-size: 100%;
+      background-position: center top;
+      background-position-y: 7em;
+
+      > div {
+        margin-top: 10em;
+      }
     }
   }
 
   &\/team {
     background: url(/images/bg-team.jpg) no-repeat center calc(68px + 2rem) / calc(100% - 380px - 6rem) auto;
-    min-height: 800px;
 
     > div {
       margin-top: 500px;
+      box-shadow: 0 20px 60px -12px #0B0B0C;
+    }
+
+    @media (max-width: 968px) {
+      background-size: 100%;
+      background-position: center top;
+      background-position-y: 4em;
+
+      > div {
+        margin-top: 14em;
+      }
     }
   }
 
@@ -105,7 +138,8 @@
     ul {
       display: table;
       width: 100%;
-      @apply .text-base ;
+      float: left;
+      @apply .text-base;
 
       @media (max-width: 968px) {
         @apply .mt-8;

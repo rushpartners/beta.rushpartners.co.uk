@@ -1,4 +1,4 @@
-<section class="home/passion relative clearfix my-32 px-20 border-box container mx-auto">
+<section class="home/passion relative clearfix my-0  md:mx-auto sm:mx-0 px-0 md:px-20 md:my-32 border-box container">
   <h2 class="h2 text-right float-right">
     Driven by passion
   </h2>
