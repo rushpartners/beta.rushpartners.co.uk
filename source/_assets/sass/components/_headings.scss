@@ -22,6 +22,9 @@ h2, .h2 {
     padding-left: 0;
     @extend .line--right;
   }
+  &--blue {
+    @extend .line--blue;
+  }
 }
 
 h3, .h3 {

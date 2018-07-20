@@ -3,7 +3,7 @@
     Our brands
   </h2>
 
-  <p class="xl:w-2/5 lg:w-3/5 md:text-right sm:text-right md:float-right clearfix">Our vision is shared by our brands, working together to revolutionize the industry from every market possible.</p>
+  <p class="xl:w-2/5 lg:w-3/5 text-right md:text-right sm:text-right md:float-right clearfix">Our vision is shared by our brands, working together to revolutionize the industry from every market possible.</p>
 
   <div class="home/brands__list">
     @include('_partials.brands')

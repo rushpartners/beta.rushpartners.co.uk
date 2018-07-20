@@ -4,7 +4,7 @@
       Work with us
     </h2>
 
-    <p class="lg:w-1/2 lg:float-right lg:text-right sm:text-right">If you share our vision and are willing to accept a new challenge, check below if there's something that could suit you and get in touch!</p>
+    <p class="lg:w-1/2 text-right lg:float-right lg:text-right sm:text-right">If you share our vision and are willing to accept a new challenge, check below if there's something that could suit you and get in touch!</p>
 
     <ul class="my-20">
       <li>

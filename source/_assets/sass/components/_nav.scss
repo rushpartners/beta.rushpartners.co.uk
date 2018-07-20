@@ -6,6 +6,9 @@
     flex: 0 0 131px;
   }
   @media (max-width: 968px) {
+   &__menu {
+     display: none;
+   }
   .social {
       @apply .hidden;
     }
@@ -26,7 +29,8 @@
 
     > a {
       display: inline-block;
-      padding: 25px;
+      padding: 20px 0 20px 0;
+      line-height: 25px;
       transition: $trans;
 
       @media (max-width: 850px) {
@@ -43,6 +47,9 @@
       > a {
         position: relative;
 
+            &:hover {
+              color: config('colors.white');
+            }
         // Triangular balloon pointer
         &:before {
           @extend %pseudo;
@@ -55,7 +62,6 @@
           border-width: 0 30px 30px 30px;
           border-color: transparent transparent config('colors.bg-gray') transparent;
         }
-
         // Chevron indicating a dropdown option
         &:after {
           content: '';
@@ -79,7 +85,7 @@
 
     &--open {
       > a {
-        color: config('colors.red-pink');
+        color: config('colors.white');
 
         &:before {
           display: inline-block;
@@ -126,7 +132,7 @@
         }
 
         a {
-          padding: 20px;
+          padding: 30px;
           opacity: .4;
           transition: $trans;
 

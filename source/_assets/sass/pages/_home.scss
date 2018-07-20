@@ -105,8 +105,7 @@
     ul {
       display: table;
       width: 100%;
-      float: left;
-      @apply .text-base;
+      @apply .text-base ;
 
       @media (max-width: 968px) {
         @apply .mt-8;
