@@ -1,93 +1,177 @@
 .home {
-  &-brands {
+  &\/brands {
+    @media (max-width: 968px) {
+      margin: 0 !important;
+      max-width: 100%;
+    }
+
     &__list {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 52px;
-      text-align: center;
-      clear: both;
-      width: 100%;
+      ul {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 52px;
+        text-align: center;
+        clear: both;
+        width: 100%;
 
-      > * {
-        padding: 20px;
-        flex: 1 0 calc(#{percentage(1/3)} - 10px);
-      }
-
-      @media (min-width: 1440px) {
-        justify-content: space-around;
-      }
-      @media (min-width: 1921px) {
         > * {
-          flex: 1 0 calc(33.33333333% - 10px);
-          &:nth-child(n) {
-            text-align: center;
+          padding: 20px;
+          flex: 1 0 calc(#{percentage(1/3)} - 10px);
+        }
+
+        @media (min-width: 1440px) {
+          justify-content: space-around;
+        }
+        @media (min-width: 1921px) {
+          > * {
+            flex: 1 0 calc(#{percentage(1/3)} - 10px);
+            &:nth-child(n) {
+              text-align: center;
+            }
+          }
+        }
+        @media (max-width: 800px) {
+          > * {
+            flex: 100%;
+            &:nth-child(n) {
+              text-align: center;
+            }
           }
         }
       }
     }
   }
 
-  &-learn-more {
-    background: linear-gradient(174.94deg, $col-orange 0%, $col-orangered 59.73%, $col-red-light 74.7%, $col-red 100%);
+  &\/learn-more {
+    background: linear-gradient(174.94deg, config('colors.orange') 0%, config('colors.orangered') 59.73%, config('colors.red-light') 74.7%, config('colors.red') 100%);
     margin-top: -290px;
     height: 451px;
     padding: 290px 96px 0;
     position: relative;
     z-index: 1;
+
+    @media (max-width: 968px) {
+      height: auto;
+      @apply .p-10;
+      text-align: center;
+      margin-top:0px;
+    }
+
+    p {
+      @media (max-width: 968px) {
+        @apply .w-full;
+      }
+    }
+
   }
 
-  &-passion {
+  &\/passion {
     background: url(/images/bg-casino.jpg) no-repeat left center / calc(100% - 380px - 6rem) auto;
     min-height: 570px;
 
+    @media (max-width: 968px) {
+      background-size: 100%;
+      background-position: center top;
+      background-position-y:6em;
+    }
+    .block-dark {
+      box-shadow: 0 20px 60px -12px #0B0B0C;
+
+      @media (max-width: 968px) {
+          margin-top: 13em;
+          float: left;
+          width: 100%;
+        }
+    }
     h2 {
       margin-top: 189px;
+
+      @media (max-width: 968px) {
+        @apply .mt-10 .float-left .ml-10 ;
+      }
     }
   }
 
-  &-adapt {
+  &\/adapt {
     background: url(/images/bg-smartphones.jpg) no-repeat center top / 100% auto;
-    min-height: 692px;
+    min-height: auto;
 
     > div {
       margin-top: 276px;
+      box-shadow: 0 20px 60px -12px #0B0B0C;
+
+    }
+
+    @media (max-width: 968px) {
+      background-size: 100%;
+      background-position: center top;
+      background-position-y: 7em;
+
+      > div {
+        margin-top: 10em;
+      }
     }
   }
 
-  &-team {
+  &\/team {
     background: url(/images/bg-team.jpg) no-repeat center calc(68px + 2rem) / calc(100% - 380px - 6rem) auto;
-    min-height: 800px;
 
     > div {
       margin-top: 500px;
+      box-shadow: 0 20px 60px -12px #0B0B0C;
+    }
+
+    @media (max-width: 968px) {
+      background-size: 100%;
+      background-position: center top;
+      background-position-y: 4em;
+
+      > div {
+        margin-top: 14em;
+      }
     }
   }
 
-  &-jobs {
+  &\/jobs {
     ul {
       display: table;
       width: 100%;
       float: left;
+      @apply .text-base;
+
+      @media (max-width: 968px) {
+        @apply .mt-8;
+      }
 
       li {
         display: table-row;
 
+        @media (max-width: 968px) {
+          display: grid;
+          @apply .mt-5 .mb-0;
+        }
+
         &:nth-child(2n + 1) > * {
-          background: $col-bg;
+          background: config('colors.bg');
         }
 
         > * {
           display: table-cell;
           padding: 2rem;
+
+          @media (max-width: 968px) {
+            padding: 2rem;
+            @apply .mb-0 .text-center;
+          }
         }
       }
     }
 
     &__dept {
       font-size: 14px;
-      color: $col-cyan;
+      color: config('colors.cyan');
       text-transform: uppercase;
     }
 
@@ -102,10 +186,22 @@
     &__cta-preface {
       line-height: #{26px + 20*2 + 3*2}; // Match button height
       margin: 0;
+
+      @media (max-width: 968px) {
+        line-height:36px;
+      }
     }
 
     &__contactus {
       padding: 0 2rem;
+
+      @media (max-width: 968px) {
+        @apply .text-center;
+
+        & .btn {
+          @apply .mt-5 .text-center .float-none;
+        }
+      }
     }
   }
 

@@ -1,9 +1,10 @@
 .about {
   &-summary {
-    background: darken($col-bg, 2%);
-    font: 18px/32px $font;
+    background: config('colors.bg');
+    @apply .font-body .font-light	 .text-xl	.leading-normal	;
   }
-  &-tiles {
+
+  &\/tiles {
     &__row {
       display: flex;
       align-items: center;
@@ -23,6 +24,137 @@
           flex-flow: column nowrap;
         }
       }
+    }
+
+    &__text {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 26px;
+    }
+  }
+
+  &\/timeline {
+    background: config('colors.bg-gray');
+
+    &__events {
+      display: block;
+      position: relative;
+      @extend %clearfix;
+
+      @media (min-width: 1480px) {
+        max-width: 1440px;
+      }
+
+      // Central reservation
+      &:before {
+        @extend %pseudo;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        margin-left: -2.5px;
+        width: $line-width;
+        background: config('colors.gray-light');
+      }
+
+      li {
+        position: relative;
+        clear: both;
+        width: 50%;
+        overflow: hidden;
+        box-sizing: border-box;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        animation: 1.5s cubic-bezier(.23, 1, .32, 1) 0s 1 both paused;
+
+        @media (max-width: 968px) {
+          text-align: center !important;
+          padding-right: 0% !important;
+          float: none !important;
+          width: 70%;
+          margin: 0 auto;
+          margin-bottom: 50px;
+          padding: 0% !important;
+        }
+
+        > div {
+          background: config('colors.bg');
+          padding: 50px;
+          position: relative;
+          z-index: 2;
+        }
+
+        // Line connecting to central reservation
+        &:before {
+          @extend %pseudo;
+          background: config('colors.gray-light');
+          height: $line-width;
+          width: 8%;
+          top: 75px; // Fit in-between year and title
+          z-index: 1;
+        }
+
+        &:nth-child(odd) {
+          float: left;
+          text-align: left;
+          padding-right: 6%;
+          transform-origin: right;
+          animation-name: horizontal-hinge-right;
+          @keyframes horizontal-hinge-right {
+            0% { transform: perspective(900px) rotateY(-90deg); opacity: .3; }
+            100% { transform: perspective(900px) rotateY(0deg); opacity: 1; }
+          }
+          @extend .line;
+
+          &:before {
+            right: 0;
+          }
+        }
+
+        &:nth-child(even) {
+          float: right;
+          text-align: right;
+          padding-left: 6%;
+          transform-origin: left;
+          animation-name: horizontal-hinge-left;
+          @keyframes horizontal-hinge-left {
+            0% { transform: perspective(600px) rotateY(90deg); opacity: .3; }
+            100% { transform: perspective(600px) rotateY(0deg); opacity: 1; }
+          }
+          @extend .line,.line--right;
+
+          &:before {
+            left: 0;
+          }
+        }
+
+        h3 {
+          padding-top: 5px;
+        }
+
+        p {
+          font: 300 14px/26px;
+          @apply .font-body;
+          color: config('colors.gray-lighter');
+        }
+
+        @media (max-width: 767px) {
+          &:nth-child(odd) {
+            padding-right: 2%;
+          }
+
+          &:nth-child(even) {
+            padding-left: 2%;
+          }
+        }
+      }
+    }
+
+    &__year {
+      font: 400 18px/20px;
+      @apply .font-body;
+      display: block;
+      color: config('colors.white');
+      opacity: .28;
     }
   }
 }
