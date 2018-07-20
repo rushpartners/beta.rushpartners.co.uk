@@ -1,7 +1,15 @@
 .footer {
+  overflow: hidden;
+
   &__legal {
-    color: $col-gray;
-    background: $col-black;
+    color: config('colors.gray');
+    background: config('colors.black');
+    @apply .text-sm;
+
+    @media (max-width: 968px) {
+      text-align: center !important;
+      @apply .leading-loose .px-5;
+    }
 
     a {
       color: inherit;
@@ -9,35 +17,60 @@
       transition: $trans;
 
       &:hover {
-        color: $col-white;
+        color: config('colors.white');
       }
     }
   }
 
   &__logo {
     margin-bottom: 1rem;
+
+    @media (max-width: 968px) {
+      height: auto;
+      padding: 5px !important;
+      margin-top: 22px;
+      margin-left: 30%;
+      margin-right: 30%;
+      width: 40%;
+    }
   }
 
+
   &__text-white {
-    color: #fff;
+    color: config('colors.white');
   }
 
   &__social {
     width: 250px;
+
+    @media (max-width: 968px) {
+      margin: 0 auto;
+      padding-right: 0px !important;
+    }
+
   }
 
   &__nav {
     margin-left: -1rem;
+    @media (max-width: 968px) {
+      @apply .text-center .leading-loose;
+      padding-left: 0 !important;
+    }
   }
 
   &__sites {
     margin-bottom: 1rem;
+
+    @media (max-width: 968px) {
+      display:none;
+    }
   }
 
   &__nav, &__sites {
     a {
       position: relative;
       color: inherit;
+      @apply .text-base;
 
       &:after {
         @extend %pseudo;
@@ -49,7 +82,7 @@
       }
 
       &:hover {
-        color: $col-orangered;
+        color: config('colors.orangered');
         transition: $trans;
 
         &:after {

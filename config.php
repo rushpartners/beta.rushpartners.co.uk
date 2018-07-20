@@ -2,7 +2,7 @@
 
 return [
     'baseUrl' => '/',
-    'title' => 'Rush Partners Ltd – Revolutionizing the sports betting industry',
+    'title' => 'Rush Partners – Revolutionizing the sports betting industry',
     'production' => false,
     'collections' => [],
     'linkedInUrl' => 'https://www.linkedin.com/company/rush-partners-ltd',

@@ -1,42 +1,35 @@
-.h2 {
+h2, .h2 {
   line-height: 50px;
   color: #F6F6F6;
-  font: 700 35px/48px $font-strong;
-  text-transform: uppercase;
+  @apply .font-body .text-3xl .font-bold .uppercase	;
   position: relative;
   padding-left: 30px;
   text-align: left;
   margin-bottom: 20px;
-
-  &:after {
-    @extend %pseudo;
-    width: 5px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(160deg, $col-orange, $col-red);
+  @extend .line;
+  //background: linear-gradient(160deg, config('colors.orange'), config('colors.red'));
+  //background: linear-gradient(314deg, config('colors.blue'), config('colors.cyan'));
+  &--center {
+    text-align: center;
+    padding: 0 0 10px;
+    margin-bottom: 25px; // Take border into account
+    @extend .line--center;
   }
 
   &--right {
     text-align: right;
     padding-right: 30px;
     padding-left: 0;
-
-    &:after {
-      right: 0;
-      left: auto;
-    }
+    @extend .line--right;
   }
-
   &--blue {
-    &:after {
-      background: linear-gradient(314deg, $col-blue, $col-cyan);
-    }
+    @extend .line--blue;
   }
 }
 
-.h3 {
-  color: $col-white;
-  font: italic 600 25px/34px $font-strong;
+h3, .h3 {
+  color: config('colors.white');
+  font: italic 600 25px/34px;
+  @apply .font-strong;
   margin-bottom: 20px;
 }

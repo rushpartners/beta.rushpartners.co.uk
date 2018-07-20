@@ -1,5 +1,5 @@
-<section class="home-team clearfix container mx-auto">
-  <h2 class="h2 h2--right">
+<section class="home/team clearfix container mx-auto">
+  <h2 class="h2 h2--right mt-8 sm:mt-0 mr-8 sm:mr-10">
     Meet the team
   </h2>
 

@@ -6,8 +6,8 @@
 
   h1 {
     display: inline-block;
-    font: italic 800 70px/70px $font-strong;
-    text-transform: uppercase;
+    @apply .font-strong .italic .uppercase .font-extrabold;
+    font-size: 90px;
     position: relative;
     margin-top: 40px;
 
@@ -19,7 +19,7 @@
       @extend %pseudo;
       bottom: -10px;
       right: -20px;
-      background: linear-gradient(-90deg, $col-orange, $col-red);
+      background: linear-gradient(-90deg, config('colors.orange'), config('colors.red'));
       width: 70%;
       height: 48px;
     }
@@ -31,30 +31,49 @@
         height: 42px;
       }
     }
+    @media (max-width: 476px) {
+      &:before {
+        bottom: -10px;
+        left: 129px;
+        width: 42%;
+      }
+    }
   }
 
   &--extended {
     h1 {
       margin-top: 227px;
+
+      @media (max-width: 991px) {
+        margin-top: 105px;
+      }
     }
   }
 
   // "Sports Technology"
   &__subtitle {
-    font: 800 24px $font;
-    text-transform: uppercase;
+    @apply .font-body .font-extrabold .uppercase .text-2xl;
+
+    @media (max-width: 991px) {
+        @apply .text-sm;
+
+    }
 
     // Leading/trailing lines
     > * {
       &:first-child, &:last-child {
         position: absolute;
         letter-spacing: 10px;
+
+        @media (max-width: 991px) {
+          letter-spacing: 5px;
+        }
       }
 
       &:first-child:before, &:last-child:after {
         content: '';
         display: inline-block;
-        border-top: 2px solid $col-white;
+        border-top: 2px solid config('colors.white');
         opacity: .5;
         width: 140px;
         vertical-align: middle;
@@ -67,6 +86,10 @@
         left: 0;
         top: 280px;
 
+        @media (max-width: 991px) {
+          top: 170px;
+        }
+
         &:before {
           margin-right: 20px;
         }
@@ -75,6 +98,9 @@
       &:last-child {
         right: 0;
         top: 500px;
+        @media (max-width: 991px) {
+          top: 400px;
+        }
 
         &:after {
           margin-left: 20px;
@@ -92,6 +118,9 @@
       width: 50%;
       margin-left: 70px;
     }
+    @media (max-width: 600px) {
+      display: none;
+    }
   }
 
   &__cta { // Call to action
@@ -99,6 +128,13 @@
     width: $title-width;
     padding: 57px 0 170px;
     text-align: right;
+
+    @media (max-width: 600px) {
+      width: 100%;
+      text-align: center;
+      padding-top: 170px;
+      padding-bottom: 82px;
+    }
 
     .btn {
       &:after {
