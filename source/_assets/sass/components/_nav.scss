@@ -5,14 +5,41 @@
   &__logo {
     flex: 0 0 131px;
   }
+  &--active {
+    background-color: #17171B;
+    min-height: 100vh;
+    z-index: 999;
+    -webkit-transition: background-color 100ms linear;
+      -ms-transition: background-color 100ms linear;
+      transition: background-color 100ms linear;
+  }
   @media (max-width: 968px) {
    &__menu {
-     display: none;
+     display: none !important;
    }
+   &--active .nav__menu {
+     display: block !important;
+     position: absolute;
+     left: 0px;
+
+     .menu-container {
+       display: grid;
+       @apply .mr-20 .ml-20 .mt-20
+    }
+   }
+
   .social {
       @apply .hidden;
     }
   }
+  .hamburger-container {
+    display: none;
+
+    @media (max-width: 968px) {
+       display: block !important;
+     }
+  }
+
 
   &__menu {
     @apply .font-body .text-base .font-extrabold .italic .uppercase;
@@ -46,10 +73,12 @@
     &--dropdown {
       > a {
         position: relative;
+        width: 120%;
 
-            &:hover {
-              color: config('colors.white');
-            }
+        &:hover {
+          color: config('colors.white');
+        }
+
         // Triangular balloon pointer
         &:before {
           @extend %pseudo;
@@ -61,6 +90,9 @@
           border-style: solid;
           border-width: 0 30px 30px 30px;
           border-color: transparent transparent config('colors.bg-gray') transparent;
+          @media (max-width: 968px) {
+            bottom: -20px;
+          }
         }
         // Chevron indicating a dropdown option
         &:after {
@@ -118,6 +150,11 @@
     z-index: 50;
     box-shadow: 0 20px 45px 0 rgba(0,0,0,.41);
 
+    @media (max-width: 968px) {
+      top: 170px;
+      left: 0px;
+      right: 0px;
+    }
 
     ul {
       display: flex;
@@ -146,21 +183,92 @@
         flex-wrap: wrap;
 
         li {
-          flex: 1 0 percentage(1/3);
+          flex: 1 50%;
 
-          &:nth-child(5) {
-            flex: 1 1 percentage(1/6);
-          }
+
         }
       }
     }
   }
   &__social {
     width: 250px;
-
     @media (max-width: 968px) {
       display:none !important;
     }
-
   }
+}
+
+
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+
+  .hamburger-box {
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
+  .hamburger-inner {
+      display: block;
+      top: 50%;
+      margin-top: -2px;
+    }
+    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+      width: 40px;
+      height: 4px;
+      background-color: #fff;
+      position: absolute;
+      transition-property: transform;
+      transition-duration: 0.15s;
+      transition-timing-function: ease;
+    }
+    .hamburger-inner::before, .hamburger-inner::after {
+      content: "";
+      display: block;
+    }
+    .hamburger-inner::before {
+      top: -13px;
+    }
+    .hamburger-inner::after {
+      bottom: -13px;
+    }
+}
+/* Spin */
+/* Spin */
+.hamburger--spin .hamburger-inner {
+  transition-duration: 0.22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--spin .hamburger-inner::before {
+  transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+}
+.hamburger--spin .hamburger-inner::after {
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--spin.is-active .hamburger-inner {
+  transform: rotate(225deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburger--spin.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+}
+.hamburger--spin.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
