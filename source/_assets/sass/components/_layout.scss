@@ -98,3 +98,7 @@ p {
 button:focus {
     outline: 0px auto ;
 }
+small {
+  @apply .text-sm;
+  color: config('colors.gray-lighter');
+}

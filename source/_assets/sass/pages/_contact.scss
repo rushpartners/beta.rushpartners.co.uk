@@ -1,0 +1,48 @@
+.contact {
+  button, input, optgroup, select, textarea {
+    color: #fff;
+    background-color: #f00;
+  }
+
+  &\/tiles {
+    &__row {
+      display: flex;
+      align-items: center;
+      align-content: stretch;
+
+      > * {
+        flex: 1 1;
+        flex-flow: row nowrap;
+      }
+
+      &:nth-child(even) {
+        flex-flow: row-reverse nowrap;
+      }
+
+      @media (max-width: 991px) {
+        &:nth-child(n) {
+          flex-flow: column nowrap;
+        }
+      }
+    }
+
+    &__text {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 26px;
+    }
+  }
+}
+.header__contact {
+  background: url(/images/bg-contact.jpg) no-repeat center center / cover;
+}
+input, textarea {
+  color: config("colors.white");
+  box-shadow: 0 1px config("colors.gray");
+  font-size:14px;
+  margin-bottom:15px;
+}
+
+textarea::-webkit-input-placeholder, textarea:-ms-input-placeholder, textarea:-moz-placeholder, textarea::-moz-placeholder  {
+color: #0bf;
+}
