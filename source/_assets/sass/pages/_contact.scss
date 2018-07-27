@@ -46,3 +46,7 @@ input, textarea {
 textarea::-webkit-input-placeholder, textarea:-ms-input-placeholder, textarea:-moz-placeholder, textarea::-moz-placeholder  {
 color: #0bf;
 }
+.map h2 {
+  z-index: 9999;
+  right: 2em;
+}
