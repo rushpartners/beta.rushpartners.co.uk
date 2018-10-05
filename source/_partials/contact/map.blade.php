@@ -2,13 +2,30 @@
   <h2 class="h2 h2--right m-8 sm:m-0 sm:my-8 mr-8 absolute pin-t float-right">On the map</h2>
 
   <div id="map"></div>
-    <script>
-      // This example adds a marker to indicate the position of Bondi Beach in Sydney,
-      // Australia.
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: {lat: 50.937531, lng: 9.189981999999986},
+  @include('_partials/contact.map.popup')
+  <style>
+    /* Always set the map height explicitly to define the size of the div
+      * element that contains the map. */
+    #map {
+      height: 640px;
+    }
+    #map .gmnoprint { display: none !important; }
+    #map  button { display: none; }
+
+    #map .gmnoprint button { display: block !important; }
+  </style>
+  <script>
+    function initMap() {
+
+      // var mapCenter = {lat: 50.937531, lng: 9.189981999999986}; 
+      var mapCenter = new google.maps.LatLng(50.937531, 9.189981999999986)
+      var mapZoom = 4;
+      var zoomedInLevel = 8;
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: mapZoom,
+          center: mapCenter,
+          // draggable: false,
           styles: [
               {
                   "featureType": "all",
@@ -197,55 +214,173 @@
                   ]
               }
           ]
+      });
+
+      // the smooth zoom function
+      function smoothZoom (map, zoomTo, step) {
+        var zoomListener;
+        var nextZoom;
+        var currentZoom = map.getZoom();
+        var step;        
+
+        if (currentZoom > zoomTo) {
+          step = currentZoom - 1;
+        } else if (currentZoom < zoomTo) {
+          step = currentZoom + 1;
+        } else {
+          return;
+        }
+
+        zoomListener = google.maps.event.addListener(map, 'zoom_changed', function() {
+          google.maps.event.removeListener(zoomListener);
+          smoothZoom(map, zoomTo, step);
         });
 
-        var image = 'https://i.imgur.com/HPFQcWL.png';
-        var londonmarker = new google.maps.Marker({
-          position: {lat: 51.51949882, lng: -0.8613703},
-          map: map,
-          icon: image
-        });
-        var manmarker = new google.maps.Marker({
-          position: {lat: 53.4807593, lng: -2.2426305000000184},
-          map: map,
-          icon: image
-        });
-        var malmarker = new google.maps.Marker({
-          position: {lat: 35.937496, lng: 14.375415999999973},
-          map: map,
-          icon: image
-        });
-        var oslomarker = new google.maps.Marker({
-          position: {lat: 59.9138688, lng: 10.752245399999993},
-          map: map,
-          icon: image
-        });
-        var stockmarker = new google.maps.Marker({
-          position: {lat: 59.32932349999999, lng: 18.068580800000063},
-          map: map,
-          icon: image
-        });
+        setTimeout(function(){map.setZoom(step)}, 100);
+      }  
 
-        marker.addListener('click', function() {
-          map.setZoom(8);
-          map.setCenter(marker.getPosition());
-        });
+      function zoomIn(map, marker) {
+        setTimeout(function() {
+          map.panTo(marker.getPosition());
+        }, 80);
+        smoothZoom(map, zoomedInLevel);
 
+        var calcTimeout = 500 + (Math.abs(map.getZoom() - zoomedInLevel) * 200);
+
+        var setMarkerTimeout = (map.getZoom() === zoomedInLevel) ? 500 : calcTimeout;
+
+        setTimeout(function() {
+          popup.setMarker(marker);
+        }, setMarkerTimeout);
       }
 
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiRIgKvw08LJKPbSCA5lveS1BoJjCWHU8&callback=initMap">
-    </script>
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 640px;
-      }
-      #map .gmnoprint { display: none !important;}
-      #map  button { display: none !important;}
+      function zoomOut() {
+        popup.setMarker(null);
+        smoothZoom(map, mapZoom);
 
-      #map .gmnoprint button { display: block !important;}
-    </style>
+        setTimeout(function(){
+          map.panTo(mapCenter);
+        }, 500);
+      }
+
+      google.maps.event.addListener(map, 'drag', function() {
+        popup.setMarker(null);
+      });
+
+      google.maps.event.addListener(map, 'zoom_changed', function() {
+        popup.setMarker(null);
+      });
+
+      google.maps.event.addListener(map, 'dbclick', function() {
+        popup.setMarker(null);
+      });
+
+      var Popup = definePopupClass();
+      popup = new Popup();
+      popup.onClickClose = function() {
+        zoomOut();
+      }
+      popup.setMap(map);
+
+      var image = 'https://i.imgur.com/HPFQcWL.png';
+      
+      var londonmarker = new google.maps.Marker({
+        position: {lat: 51.5175706, lng: -0.1806992},
+        map: map,
+        icon: image,
+        metadata: {
+          name: 'London Headquarters',
+          addressLine1: '2 Eastbourne Terrace',
+          addressLine2: null,
+          city: 'London',
+          country: 'England',
+          postcode: 'W2 6LG',
+          phone: '+44 (0) 125 482 1234'
+        }
+      });
+      londonmarker.setDraggable(false);
+      londonmarker.addListener('click', function() {
+        zoomIn(map, londonmarker);
+      });
+
+      var manmarker = new google.maps.Marker({
+        position: {lat: 53.4807593, lng: -2.2426305000000184},
+        map: map,
+        icon: image,
+        metadata: {
+          name: 'Manchester (to update)',
+          addressLine1: '2 Eastbourne Terrace',
+          addressLine2: null,
+          city: 'London',
+          country: 'England',
+          postcode: 'W2 6LG',
+          phone: '+44 (0) 125 482 1234'
+        }
+      });
+      manmarker.setDraggable(false);
+      manmarker.addListener('click', function() {
+        zoomIn(map, manmarker);
+      });
+
+      var malmarker = new google.maps.Marker({
+        position: {lat: 35.937496, lng: 14.375415999999973},
+        map: map,
+        icon: image,
+        metadata: {
+          name: 'Malta (to update)',
+          addressLine1: '2 Eastbourne Terrace',
+          addressLine2: null,
+          city: 'London',
+          country: 'England',
+          postcode: 'W2 6LG',
+          phone: '+44 (0) 125 482 1234'
+        }
+      });
+      malmarker.setDraggable(false);
+      malmarker.addListener('click', function() {
+        zoomIn(map, malmarker);
+      });
+
+      var oslomarker = new google.maps.Marker({
+        position: {lat: 59.9138688, lng: 10.752245399999993},
+        map: map,
+        icon: image,
+        metadata: {
+          name: 'Oslo (to update)',
+          addressLine1: '2 Eastbourne Terrace',
+          addressLine2: null,
+          city: 'London',
+          country: 'England',
+          postcode: 'W2 6LG',
+          phone: '+44 (0) 125 482 1234'
+        }
+      });
+      oslomarker.setDraggable(false);
+      oslomarker.addListener('click', function() {
+        zoomIn(map, oslomarker);
+      });
+
+      var stockmarker = new google.maps.Marker({
+        position: {lat: 59.32932349999999, lng: 18.068580800000063},
+        map: map,
+        icon: image,
+        metadata: {
+          name: 'Stockholm (to update)',
+          addressLine1: '2 Eastbourne Terrace',
+          addressLine2: null,
+          city: 'London',
+          country: 'England',
+          postcode: 'W2 6LG',
+          phone: '+44 (0) 125 482 1234'
+        }
+      });
+      stockmarker.setDraggable(false);
+      stockmarker.addListener('click', function() {
+        zoomIn(map, stockmarker);
+      });
+    }
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiRIgKvw08LJKPbSCA5lveS1BoJjCWHU8&callback=initMap">
+  </script>
 </section>
