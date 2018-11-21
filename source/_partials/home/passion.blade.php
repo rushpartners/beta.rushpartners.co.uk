@@ -1,5 +1,5 @@
 <section class="home/passion relative clearfix my-0  md:mx-auto sm:mx-0 px-0 md:px-20 md:my-32 border-box container">
-  <h2 class="h2 text-right float-right">
+  <h2 class="h2 sm:text-right float-right">
     Driven by passion
   </h2>
   <div class="block-dark lg:w-1/2 lg:float-right sm:w-full  clear">

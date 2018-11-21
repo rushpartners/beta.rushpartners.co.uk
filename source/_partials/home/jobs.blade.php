@@ -1,5 +1,5 @@
 <section class="home/jobs block-dark my-12 mt-0 sm:my-12 -mb-6">
-  <div class="p-10 container mx-auto">
+  <div class="p-2 sm:p-10 container mx-auto">
     <h2 class="h2 h2--right h2--blue">
       Work with us
     </h2>
