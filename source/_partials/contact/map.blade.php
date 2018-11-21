@@ -291,11 +291,11 @@
         metadata: {
           name: 'London Headquarters',
           addressLine1: '2 Eastbourne Terrace',
-          addressLine2: null,
+          addressLine2: '',
           city: 'London',
           country: 'England',
           postcode: 'W2 6LG',
-          phone: '+44 (0) 125 482 1234'
+          phone: '',
         }
       });
       londonmarker.setDraggable(false);
@@ -308,13 +308,13 @@
         map: map,
         icon: image,
         metadata: {
-          name: 'Manchester (to update)',
-          addressLine1: '2 Eastbourne Terrace',
-          addressLine2: null,
+          name: 'Manchester',
+          addressLine1: 'No. 1 Spinning Fields',
+          addressLine2: 'Quay St',
           city: 'London',
           country: 'England',
-          postcode: 'W2 6LG',
-          phone: '+44 (0) 125 482 1234'
+          postcode: 'M3 3JE',
+          phone: ''
         }
       });
       manmarker.setDraggable(false);
@@ -327,13 +327,13 @@
         map: map,
         icon: image,
         metadata: {
-          name: 'Malta (to update)',
-          addressLine1: '2 Eastbourne Terrace',
-          addressLine2: null,
-          city: 'London',
-          country: 'England',
-          postcode: 'W2 6LG',
-          phone: '+44 (0) 125 482 1234'
+          name: 'Malta',
+          addressLine1: '119, Triq Tas-Sliema',
+          addressLine2: '',
+          city: 'Gzira, GZR1635',
+          country: 'Malta',
+          postcode: '',
+          phone: ''
         }
       });
       malmarker.setDraggable(false);
@@ -346,13 +346,13 @@
         map: map,
         icon: image,
         metadata: {
-          name: 'Oslo (to update)',
-          addressLine1: '2 Eastbourne Terrace',
-          addressLine2: null,
-          city: 'London',
-          country: 'England',
-          postcode: 'W2 6LG',
-          phone: '+44 (0) 125 482 1234'
+          name: 'Oslo',
+          addressLine1: 'Rådhusgata 23',
+          addressLine2: '0158',
+          city: 'Oslo',
+          country: 'Norway',
+          postcode: '',
+          phone: '',
         }
       });
       oslomarker.setDraggable(false);
@@ -365,13 +365,13 @@
         map: map,
         icon: image,
         metadata: {
-          name: 'Stockholm (to update)',
-          addressLine1: '2 Eastbourne Terrace',
-          addressLine2: null,
-          city: 'London',
-          country: 'England',
-          postcode: 'W2 6LG',
-          phone: '+44 (0) 125 482 1234'
+          name: 'Stockholm',
+          addressLine1: 'Gustav III:s Boulevard 42',
+          addressLine2: '',
+          city: '169 73 Solna',
+          country: 'Sweden',
+          postcode: '',
+          phone: '',
         }
       });
       stockmarker.setDraggable(false);
